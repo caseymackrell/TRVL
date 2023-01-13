@@ -6,6 +6,7 @@
 h1 {
     text-align: center;
     color: black;
+    font-size: 75px;
 }
 
 .cards__container {
@@ -113,7 +114,8 @@ h1 {
 }
 
 @media only screen and (max-width: 1024px) {
-    .cards__item {
-        margin-bottom: 2rem;
+
+    h1 {
+        font-size: 50px;
     }
 }

@@ -1,43 +1,55 @@
 img {
     object-fit: cover;
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
 
 }
 
 .mainContainer {
-        height: 100vh;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
-            object-fit: contain;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.652);
+    object-fit: contain;
 }
 
 
-.mission{
-    background-color: rgba(255, 255, 255, 0.29);
+.mission {
+    background-color: rgba(255, 255, 255, 0.621);
     display: flex;
     flex-wrap: wrap;
     width: 80%;
     align-items: center;
-    text-align: left;
+    justify-content: center;
+    text-align: center;
     font-size: 40px;
-    margin-left: 100px;
     padding-left: 10px;
-    color: white;
+    color: black;
     line-height: 2.5;
+    align-self: center;
 
 }
 
 .description-container {
     display: flex;
+    align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 
-.missionHeader{
+.bookNow {
+    margin-top: 50px;
+   text-align: center;
+   font-size: 50px;
+   line-height: 2;
+   color: black;
+
+}
+
+.missionHeader {
     display: flex;
     align-items: flex-start;
     color: white;
@@ -66,4 +78,35 @@ img {
 
 .underlineBottom {
     margin-top: 500px;
+}
+
+@media only screen and (min-width: 1200px) {
+    .mission{
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .cards__items {
+        display: flex;
+    }
+           .mission {
+               width: 70%;
+           }
+}
+
+@media only screen and (max-width: 1024px) {
+
+.mission {
+       width: 90%;
+       font-size: 30px;
+        }
+
+.bookNow {
+    font-size: 40px;
+}
+
+.missionHeader {
+    font-size: 50px;
+}
 }

@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './bookform.css'
+import axios from 'axios'
 
 function BookForm() {
   const [formData, setFormData] = useState({
@@ -15,18 +16,34 @@ function BookForm() {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
+const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formData);
-    // send it to API
+    axios.post('http://localhost:3000/trip', formData)
+      .then(response => {
+        console.log(response);
+        setFormData({
+          firstName: '',
+          lastName: '',
+          location: '',
+          startDate: '',
+          endDate: ''})
+      })
+      .catch(error => {
+        console.error(error)
+      });
   };
 
     const locationOptions = [
     { value: '', label: '-- Please select a location --' },
     { value: 'Amazon', label: 'Amazon' },
-    { value: 'Los Angeles', label: 'Los Angeles' },
-    { value: 'Chicago', label: 'Chicago' },
-    { value: 'Houston', label: 'Houston' },
+    { value: 'Egypt', label: 'Egypt' },
+    { value: 'Australia', label: 'Australia' },
+    { value: 'London', label: 'London' },
+    { value: 'Private Island', label: 'Private Island' },
+    { value: 'Yacht Adventure', label: 'Yacht Adventure' },
+    { value: 'Bahamas', label: 'Bahamas' },
+    { value: 'Nepal', label: 'Nepal' }
   ];
 
   return (
