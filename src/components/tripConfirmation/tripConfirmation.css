@@ -6,12 +6,12 @@ video {
     z-index: -1;
 }
 
-.mainFormContainer{
-        height: 100vh;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+.mainFormContainer {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .bookHeader {
@@ -31,7 +31,7 @@ video {
     border-radius: 20px;
 }
 
-.formAnswers{
+.formAnswers {
     display: flex;
     flex-direction: row;
     margin-bottom: 50px;
@@ -42,7 +42,7 @@ video {
     padding-left: 10px;
 }
 
-.formHeading{
+.formHeading {
     padding-bottom: 10px;
     font-size: x-large;
 }
@@ -61,7 +61,7 @@ select {
     border-radius: 10px;
 }
 
-.submitButton{
+.submitButton {
     padding: 15px 36%;
     margin-top: 50px;
 
@@ -73,15 +73,15 @@ select {
     color: white;
 }
 
-.submitButton:hover{
+.submitButton:hover {
     background-color: white;
     color: black;
-        border-radius: 10px;
+    border-radius: 10px;
     transition: 0.5s;
 }
 
 @media screen and (max-width: 1300px) {
-.bookHeader {
+    .bookHeader {
         margin-bottom: 75px;
         font-size: 55px;
     }
@@ -90,28 +90,28 @@ select {
         padding: 15px 33%;
     }
 
-.formContainer {
+    .formContainer {
 
-    width: 70%;
+        width: 70%;
 
-}
+    }
 }
 
 @media only screen and (max-width: 1024px) {
-.formContainer {
+    .formContainer {
 
         width: 100%;
         height: 100%;
 
     }
 
-.submitButton {
-    padding-top: 2px;
-    padding-bottom: 2px;
-    font-size: 30px;
-}
+    .submitButton {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        font-size: 30px;
+    }
 
-.formAnswers {
-    margin-bottom: 10px;
-}
+    .formAnswers {
+        margin-bottom: 10px;
+    }
 }

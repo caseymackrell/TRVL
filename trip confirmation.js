@@ -1,12 +1,14 @@
-import React, {useState} from 'react'
+import React, {useState, useHistory} from 'react'
 import './bookform.css'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom';
+import TripConfirmation from '../tripConfirmation/tripConfirmation';
 
 function BookForm() {
-  
-  const navigate = useNavigate()
+  const history = useHistory()
 
+  const [trip, setTrip] = useState({});
+const [isLoading, setIsLoading] = useState(false);
+  
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -38,9 +40,12 @@ const handleSubmit = async (event) => {
         console.log(postResponse);
         
         const { data: { _id: id } } = postResponse;
+        setIsLoading(true);
         const getResponse = await axios.get(`http://localhost:3000/trip/${id}`);
         console.log(getResponse);
-        navigate('/trip', { state: { tripData: getResponse.data } })
+        setTrip(getResponse.data)
+        setIsLoading(false);
+        history.push("/trip");
     } catch (error) {
         console.error(error);
     }
@@ -134,6 +139,7 @@ const handleSubmit = async (event) => {
         </div>
         </form>
         </div>
+       {!isLoading && <TripConfirmation trip={trip} />}
     </div>
   );
 };
