@@ -2,10 +2,13 @@ import React, {useState} from 'react'
 import './bookform.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux'
 
 function BookForm() {
   
   const navigate = useNavigate()
+  const id = useSelector(state => state.id);
+  const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -38,9 +41,14 @@ const handleSubmit = async (event) => {
         console.log(postResponse);
         
         const { data: { _id: id } } = postResponse;
+        const _id = postResponse.data._id
+        console.log(_id)
+        console.log(postResponse)
+        dispatch({type: 'SET_ID', id: _id})
+
         const getResponse = await axios.get(`http://localhost:3000/trip/${id}`);
         console.log(getResponse);
-        navigate('/trip', { state: { tripData: getResponse.data } })
+        navigate('/trip')
     } catch (error) {
         console.error(error);
     }
